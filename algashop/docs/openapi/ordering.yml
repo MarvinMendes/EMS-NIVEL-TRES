@@ -9,3 +9,30 @@ servers:
     url: "http://localhost:8080"
   - description: Production
     url: "https://api.algashop.com"
+paths:
+  /api/v1/customers:
+    post:
+      description: Create a new customer
+      tags:
+        - Customers
+    get:
+      description: Get a list of customers
+      tags:
+        - Customers
+    /api/v1/customers/{customerId}:
+        get:
+            parameters:
+              schema:
+                type: string
+            name: customerId
+            description: Get a customer by ID
+            tags:
+            - Customers
+        put:
+            description: Update a customer by ID
+            tags:
+            - Customers
+        delete:
+            description: Delete a customer by ID
+            tags:
+            - Customers
